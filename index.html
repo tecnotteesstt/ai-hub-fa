@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Hub | هاب هوش مصنوعی - بهترین ابزارها و اخبار روز</title>
-    <meta name="description" content="بهترین و کاربردی‌ترین ابزارهای هوش مصنوعی رایگان و پولی به همراه آخرین اخبار AI">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Jawad AI PCO | مرجع هوش مصنوعی - بهترین ابزارها و اخبار روز</title>
+    <meta name="description" content="Jawad AI PCO - بهترین و کاربردی‌ترین ابزارهای هوش مصنوعی رایگان و پولی به همراه آخرین اخبار AI">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
@@ -135,12 +141,15 @@
         }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
             font-weight: 800;
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         nav {
@@ -621,7 +630,7 @@
         <div class="header-content">
             <div class="logo">
                 <div class="logo-icon"><i class="fas fa-brain"></i></div>
-                <span class="logo-text">AI Hub</span>
+                <span class="logo-text">Jawad AI PCO</span>
             </div>
             <nav>
                 <a href="#news" class="active">اخبار</a>
@@ -1006,7 +1015,12 @@
 
     <!-- Footer -->
     <footer>
-        <p>🤖 AI Hub — مرجع فارسی هوش مصنوعی | هر روز ۳ خبر مهم + بهترین ابزارها</p>
+        <p style="font-family: 'Orbitron', sans-serif; font-size: 1.2rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.75rem;">JAWAD AI PCO</p>
+        <p>مرجع فارسی هوش مصنوعی | هر روز ۳ خبر مهم + بهترین ابزارها</p>
+        <p style="margin-top: 0.75rem; font-size: 0.95rem; direction: ltr;">
+            <i class="fas fa-phone" style="color: var(--accent);"></i>&nbsp;
+            <a href="tel:03177867779" style="color: var(--primary); text-decoration: none; font-weight: 600; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem;">0317 786 7779</a>
+        </p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem;">آخرین بروزرسانی: ۱۹ می ۲۰۲۶ (۲۹ اردیبهشت ۱۴۰۵)</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-telegram"></i></a>
@@ -1017,7 +1031,43 @@
     </footer>
 
     <script>
-        // Create floating particles
+        // === SECURITY MEASURES ===
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Disable keyboard shortcuts for view source / dev tools
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12') { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+        });
+
+        // Disable text selection on sensitive areas
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.closest('.tool-card') || e.target.closest('.news-card')) {
+                e.preventDefault();
+            }
+        });
+
+        // Disable drag
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+
+        // Anti-iframe embedding protection
+        if (window.self !== window.top) {
+            window.top.location = window.self.location;
+        }
+
+        // Console warning
+        console.log('%c⚠️ STOP!', 'color: red; font-size: 40px; font-weight: bold;');
+        console.log('%cThis is a secured website. Any unauthorized access attempt is logged and monitored.', 'color: orange; font-size: 16px;');
+
+        // === PARTICLES ===
         const particles = document.getElementById('particles');
         for (let i = 0; i < 30; i++) {
             const particle = document.createElement('div');
@@ -1029,7 +1079,7 @@
             particles.appendChild(particle);
         }
 
-        // Smooth scroll
+        // === SMOOTH SCROLL ===
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1042,7 +1092,7 @@
             });
         });
 
-        // Intersection Observer for animations
+        // === ANIMATIONS ===
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1053,6 +1103,12 @@
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // === LINK PROTECTION ===
+        // Ensure external links open safely
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.setAttribute('rel', 'noopener noreferrer');
         });
     </script>
 </body>
